@@ -9,7 +9,12 @@ export default function Home() {
 				<meta name="viewport" content="width=device-width, initial-scale=1" />
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
-			<div>Ana Sayfa</div>
+			<h4 className="title">Ana Sayfa</h4>
+			<style jsx>{`
+				.title {
+					color: green;
+				}
+			`}</style>
 		</>
 	);
 }
