@@ -9,7 +9,9 @@ export default function Home() {
 				<meta name="viewport" content="width=device-width, initial-scale=1" />
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
-			<h4 className="title">Ana Sayfa</h4>
+			<h4 className="title">
+				<i class="fa-solid fa-face-smile"></i> Ana Sayfa
+			</h4>
 			<style jsx>{`
 				.title {
 					color: green;
