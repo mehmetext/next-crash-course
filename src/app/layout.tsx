@@ -1,12 +1,15 @@
 //Next
 import { Metadata } from "next";
+import Link from "next/link";
 
 //Styles
 import "./globals.css";
 
 //Fonts
 import { Inter } from "next/font/google";
-import Link from "next/link";
+
+//Utils
+import cn from "@/lib/utils/cn";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -34,15 +37,18 @@ export default function RootLayout({
 }) {
 	return (
 		<html lang="en">
-			<body className={inter.className}>
-				<header className="bg-slate-500 text-white p-4">
-					<h2 className="text-2xl font-bold">My Nav</h2>
+			<body className={cn(inter.className, "flex flex-col")}>
+				<header className="bg-slate-500 text-white p-4 flex items-center justify-between gap-4">
+					<h2 className="text-2xl font-bold">
+						My Nav{" "}
+						<span className="text-xs font-normal">(from RootLayout)</span>
+					</h2>
 					<nav className="flex gap-x-2">
 						<Link href="http://localhost:3000/">Home</Link>
 						<Link href="/about">About</Link>
 					</nav>
 				</header>
-				<main>{children}</main>
+				<main className="flex-1 flex flex-col">{children}</main>
 			</body>
 		</html>
 	);

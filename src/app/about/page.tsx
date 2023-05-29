@@ -10,5 +10,9 @@ export const metadata: Metadata = {
 };
 
 export default function About() {
-	return <div>My About Page</div>;
+	return (
+		<div className="flex-1 flex items-center justify-center">
+			<h1 className="font-bold text-5xl">My About Page</h1>
+		</div>
+	);
 }
