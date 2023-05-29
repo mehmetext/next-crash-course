@@ -6,6 +6,7 @@ import "./globals.css";
 
 //Fonts
 import { Inter } from "next/font/google";
+import Link from "next/link";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -33,7 +34,16 @@ export default function RootLayout({
 }) {
 	return (
 		<html lang="en">
-			<body className={inter.className}>{children}</body>
+			<body className={inter.className}>
+				<header className="bg-slate-500 text-white p-4">
+					<h2 className="text-2xl font-bold">My Nav</h2>
+					<nav className="flex gap-x-2">
+						<Link href="http://localhost:3000/">Home</Link>
+						<Link href="/about">About</Link>
+					</nav>
+				</header>
+				{children}
+			</body>
 		</html>
 	);
 }
