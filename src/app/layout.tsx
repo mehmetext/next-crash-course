@@ -42,7 +42,7 @@ export default function RootLayout({
 						<Link href="/about">About</Link>
 					</nav>
 				</header>
-				{children}
+				<main>{children}</main>
 			</body>
 		</html>
 	);
