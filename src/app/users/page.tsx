@@ -1,5 +1,5 @@
 //Next
-import getAllUsers from "@/lib/getAllUsers";
+import getAllUsers from "@/lib/services/getAllUsers";
 import { Metadata } from "next";
 import Link from "next/link";
 
