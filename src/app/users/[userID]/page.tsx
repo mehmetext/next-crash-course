@@ -21,16 +21,16 @@ export async function generateMetadata({
 }
 
 export default async function UserPage({ params: { userID } }: Props) {
-	const [user] = await Promise.all([getUser(userID)]);
+	const [user, posts] = await Promise.all([
+		getUser(userID),
+		getUserPosts(userID),
+	]);
 
 	return (
 		<>
 			<h1 className="text-5xl font-bold">{user.name}</h1>
 			<br />
-			<Suspense fallback={<h2 className="text-4xl font-bold">Loading...</h2>}>
-				{/* @ts-expect-error Server Component */}
-				<UserPosts promise={getUserPosts(userID)} />
-			</Suspense>
+			<UserPosts posts={posts} />
 		</>
 	);
 }

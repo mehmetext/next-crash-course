@@ -1,10 +1,4 @@
-export default async function UserPosts({
-	promise,
-}: {
-	promise: Promise<Post[]>;
-}) {
-	const posts = await promise;
-
+export default function UserPosts({ posts }: { posts: Post[] }) {
 	return (
 		<section className="space-y-2">
 			{posts.map((item) => (
