@@ -2,8 +2,8 @@ import getUser from "@/lib/services/getUser";
 import getUserPosts from "@/lib/services/getUserPosts";
 import UserPosts from "./components/UserPosts";
 
-import { Suspense } from "react";
 import { Metadata } from "next";
+import { notFound } from "next/navigation";
 
 interface Props {
 	params: { userID: string };
@@ -25,6 +25,10 @@ export default async function UserPage({ params: { userID } }: Props) {
 		getUser(userID),
 		getUserPosts(userID),
 	]);
+
+	if (!user.name) {
+		return notFound();
+	}
 
 	return (
 		<>

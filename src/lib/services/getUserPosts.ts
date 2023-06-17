@@ -3,7 +3,5 @@ export default async function getUserPosts(id: string): Promise<Post[]> {
 		`https://jsonplaceholder.typicode.com/posts?userId=${id}`
 	);
 
-	if (!res.ok) throw new Error("failed to fetch data");
-
 	return await res.json();
 }
