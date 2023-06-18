@@ -1,3 +1,6 @@
+//Components
+import Header from "@/components/Header";
+
 //Next
 import { Metadata } from "next";
 
@@ -36,7 +39,10 @@ export default function RootLayout({
 }) {
 	return (
 		<html lang="en">
-			<body className={cn(inter.className)}>{children}</body>
+			<body className={cn(inter.className, "bg-slate-800 text-white")}>
+				<Header />
+				{children}
+			</body>
 		</html>
 	);
 }
