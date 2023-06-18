@@ -12,6 +12,8 @@ import { Inter } from "next/font/google";
 
 //Utils
 import cn from "@/lib/utils/cn";
+import Container from "@/components/Container";
+import Profile from "@/components/Profile";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -39,8 +41,11 @@ export default function RootLayout({
 }) {
 	return (
 		<html lang="en">
-			<body className={cn(inter.className, "bg-slate-800 text-white")}>
+			<body
+				className={cn(inter.className, "bg-slate-800 text-white space-y-10")}
+			>
 				<Header />
+				<Profile />
 				{children}
 			</body>
 		</html>
