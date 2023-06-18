@@ -12,13 +12,12 @@ import { Inter } from "next/font/google";
 
 //Utils
 import cn from "@/lib/utils/cn";
-import Container from "@/components/Container";
 import Profile from "@/components/Profile";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-	title: "Next Crash Course",
+	title: "Mehmet K.",
 	description: "Created by mehmetext",
 	generator: "mehmetext",
 	creator: "mehmetext",
