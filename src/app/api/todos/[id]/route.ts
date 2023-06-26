@@ -2,9 +2,18 @@ import { NextResponse } from "next/server";
 
 const dataUrl = "https://jsonplaceholder.typicode.com/todos";
 
-export async function GET(request: Request) {
-	const id = request.url.slice(request.url.lastIndexOf("/") + 1);
+interface Params {
+	id: string;
+}
 
+export async function GET(
+	request: Request,
+	{
+		params: { id },
+	}: {
+		params: Params;
+	}
+) {
 	const res = await fetch(`${dataUrl}/${id}`);
 
 	const todo: Todo = await res.json();
